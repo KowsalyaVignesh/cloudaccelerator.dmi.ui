@@ -1,0 +1,36 @@
+@import "variables";
+
+.drawer-container {
+  width: auto;
+  background: $tints;
+
+  .navigation-container {
+    margin: 10px;
+    font-family: sans-serif;
+
+    .nav-header {
+      color: $brilliant-azure;
+      font-size: 14px;
+      font-weight: 600;
+      padding-inline: 16px;
+    }
+
+    .menu-item {
+      display: flex;
+      align-items: center;
+
+      .menu-item-label {
+        padding-inline-start: 10px;
+        color: $smoky-black;
+        font-weight: 600;
+      }
+      .sub-menu-item-label{
+        padding-inline-start: 10px;
+      }
+    }
+  }
+
+  .content-container{
+    padding: 10px;
+  }
+}

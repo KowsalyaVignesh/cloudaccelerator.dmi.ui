@@ -1,0 +1,56 @@
+<div>
+
+    <mat-sidenav-container class="drawer-container" fullscreen>
+
+        <mat-sidenav #sidenav mode="side" [opened]="showSideNav">
+           
+            <div class="navigation-container">
+                <mat-nav-list>
+                    <span class="nav-header">MENU</span>
+                    <span *ngFor="let item of menu">
+                        <span *ngIf="item.children && item.children.length > 0">
+                            <mat-accordion>
+                                <mat-expansion-panel class="mat-elevation-z0" >
+                                    <mat-expansion-panel-header>
+                                        <mat-panel-title>
+                                           <!-- Menu -->
+                                            <div class="menu-item">
+                                                <mat-icon class="icons-color-lavener">{{item.iconName}}</mat-icon>
+                                               <span class="menu-item-label"> {{item.displayName}}</span>
+                                            </div>
+                                        </mat-panel-title>
+                                    </mat-expansion-panel-header>
+                                    <span *ngFor="let child of item.children">
+                                        <mat-list-item [routerLink]="child.route">
+                                           <!-- sub menu -->
+                                            <div class="menu-item">
+                                                <mat-icon class="icons-color-lavener">{{child.iconName}}</mat-icon>
+                                                <span class="sub-menu-item-label">{{child.displayName}}</span>
+                                            </div>
+                                        </mat-list-item>
+                                    </span>
+                                </mat-expansion-panel>
+                            </mat-accordion>
+                        </span>
+                        <span *ngIf="!item.children || item.children.length === 0">
+                            <mat-list-item routerLink="[item.route]">
+                                <!-- Entradas principales -->
+                                <div fxLayout="row" fxLayoutAlign="space-between center">
+                                    <mat-icon>{{item.iconName}}</mat-icon>
+                                    {{item.displayName}}
+                                </div>
+                            </mat-list-item>
+                        </span>
+                    </span>
+                </mat-nav-list>
+            </div>
+        </mat-sidenav>
+        <mat-sidenav-content >
+            <app-topbar></app-topbar>
+            <div class="content-container">
+                <router-outlet></router-outlet>
+            </div>
+           
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>

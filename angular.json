@@ -1,0 +1,378 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "cloudaccelerator.dmi.ui": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss",
+          "standalone": false
+        },
+        "@schematics/angular:directive": {
+          "standalone": false
+        },
+        "@schematics/angular:pipe": {
+          "standalone": false
+        }
+      },
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "outputPath": "dist/cloudaccelerator.dmi.ui",
+            "index": "src/index.html",
+            "browser": "src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "ca": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "5MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kB",
+                  "maximumError": "5MB"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/release-instance/ca/environments/environment.ca.ts"
+                }
+              ],
+              "assets": [
+                {
+                  "glob": "**/*",
+                  "input": "src/release-instance/ca/assets",
+                  "output": "/assets/"
+                },
+                {
+                  "glob": "favicon.ico",
+                  "input": "src/release-instance/ca/assets",
+                  "output": "/"
+                }
+              ],
+              "stylePreprocessorOptions": {
+                "includePaths": [
+                  "src/release-instance/ca/config"
+                ]
+              },
+              "outputHashing": "all"
+            },
+            "ace": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "5MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kB",
+                  "maximumError": "5MB"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/release-instance/ace/environments/environment.ace.ts"
+                }
+              ],
+              "assets": [
+                {
+                  "glob": "**/*",
+                  "input": "src/release-instance/ace/assets",
+                  "output": "/assets/"
+                },
+                {
+                  "glob": "favicon.ico",
+                  "input": "src/release-instance/ace/assets",
+                  "output": "/"
+                }
+              ],
+              "stylePreprocessorOptions": {
+                "includePaths": [
+                  "src/release-instance/ace/config"
+                ]
+              },
+              "outputHashing": "all"
+            },
+            "gp": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "5MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kB",
+                  "maximumError": "5MB"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/release-instance/gp/environments/environment.gp.ts"
+                }
+              ],
+              "assets": [
+                {
+                  "glob": "**/*",
+                  "input": "src/release-instance/gp/assets",
+                  "output": "/assets/"
+                },
+                {
+                  "glob": "favicon.ico",
+                  "input": "src/release-instance/gp/assets",
+                  "output": "/"
+                }
+              ],
+              "stylePreprocessorOptions": {
+                "includePaths": [
+                  "src/release-instance/gp/config"
+                ]
+              },
+              "outputHashing": "all"
+            },
+            "crst": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "5MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kB",
+                  "maximumError": "5MB"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/release-instance/crst/environments/environment.crst.ts"
+                }
+              ],
+              "assets": [
+                {
+                  "glob": "**/*",
+                  "input": "src/release-instance/crst/assets",
+                  "output": "/assets/"
+                },
+                {
+                  "glob": "favicon.ico",
+                  "input": "src/release-instance/crst/assets",
+                  "output": "/"
+                }
+              ],
+              "stylePreprocessorOptions": {
+                "includePaths": [
+                  "src/release-instance/crst/config"
+                ]
+              },
+              "outputHashing": "all"
+            },
+            "bfs": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "5MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kB",
+                  "maximumError": "5MB"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/release-instance/bfs/environments/environment.bfs.ts"
+                }
+              ],
+              "assets": [
+                {
+                  "glob": "**/*",
+                  "input": "src/release-instance/bfs/assets",
+                  "output": "/assets/"
+                },
+                {
+                  "glob": "favicon.ico",
+                  "input": "src/release-instance/bfs/assets",
+                  "output": "/"
+                }
+              ],
+              "stylePreprocessorOptions": {
+                "includePaths": [
+                  "src/release-instance/bfs/config"
+                ]
+              },
+              "outputHashing": "all"
+            },
+            "ross": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "5MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kB",
+                  "maximumError": "5MB"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/release-instance/ross/environments/environment.ross.ts"
+                }
+              ],
+              "assets": [
+                {
+                  "glob": "**/*",
+                  "input": "src/release-instance/ross/assets",
+                  "output": "/assets/"
+                },
+                {
+                  "glob": "favicon.ico",
+                  "input": "src/release-instance/ross/assets",
+                  "output": "/"
+                }
+              ],
+              "stylePreprocessorOptions": {
+                "includePaths": [
+                  "src/release-instance/ross/config"
+                ]
+              },
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/release-instance/development/environments/environment.dev.ts"
+                }
+              ],
+              "assets": [
+                {
+                  "glob": "**/*",
+                  
+                  "input": "src/release-instance/development/assets",
+                  "output": "/assets/"
+                },
+                {
+                  "glob": "favicon.ico",
+                  "input": "src/release-instance/development/assets",
+                  "output": "/"
+                }
+              ],
+              "stylePreprocessorOptions": {
+                "includePaths": [
+                  "src/release-instance/development/config"
+                ]
+              }
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "cloudaccelerator.dmi.ui:build:production"
+            },
+            "development": {
+              "buildTarget": "cloudaccelerator.dmi.ui:build:development"
+            },
+            "ca": {
+              "browserTarget": "cloudaccelerator.dmi.ui:ca"
+            },
+            "ace": {
+              "browserTarget": "cloudaccelerator.dmi.ui:ace"
+            },
+            "gp": {
+              "browserTarget": "cloudaccelerator.dmi.ui:gp"
+            },
+            "crst": {
+              "browserTarget": "cloudaccelerator.dmi.ui:crst"
+            },
+            "bfs": {
+              "browserTarget": "cloudaccelerator.dmi.ui:bfs"
+            },
+            "ross": {
+              "browserTarget": "cloudaccelerator.dmi.ui:ross"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "cloudaccelerator.dmi.ui:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "tsconfig.spec.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "src/styles.scss"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    }
+  }
+}

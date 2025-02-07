@@ -1,0 +1,33 @@
+@import "variables";
+
+.icons-color-delete {
+    color: $mulberry !important;
+}
+
+.icons-color-edit {
+    color: $brilliant-azure
+}
+
+.folder-list-header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding-inline-end: 40px;
+    padding-block: 20px;
+}
+
+.table-title {
+    font-weight: 600;
+}
+
+.table-item {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    .table-item-label {
+        padding-inline-start: 10px;
+        color: $smoky-black;
+    }
+}

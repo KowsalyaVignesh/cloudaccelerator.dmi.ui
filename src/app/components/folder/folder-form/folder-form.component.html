@@ -1,0 +1,55 @@
+<div class="folder-container">
+    <mat-card class="card-container">
+        <div>
+            <div>
+                <p class="heading">{{data.name}} Folder</p>
+                <hr>
+                @if(data.name != 'Delete'){
+                <div class="form-container">
+                    <form [formGroup]="folderForm" (ngSubmit)="onSubmit()">
+
+                        <mat-form-field appearance="outline" class="input-width">
+                            <mat-label>Folder Name</mat-label>
+                            <input matInput placeholder="Enter folder name" formControlName="folderName" required>
+                            <!-- <mat-error *ngIf="!alreadyExist" >Folder name already exist</mat-error> -->
+
+                        </mat-form-field>
+
+                        <div mat-dialog-actions align="end">
+                            <span>
+                                <button type="button" mat-stroked-button mat-dialog-close>
+                                    Clear
+                                </button>
+                                <button type="submit" mat-stroked-button class="success-btn" [mat-dialog-close]="true"
+                                    [disabled]="!folderForm.valid">
+                                    Submit
+                                </button>
+                            </span>
+                        </div>
+
+                    </form>
+                </div>
+                }@else {
+                <div>
+                    <p>
+                        Are you sure you want to delete this folder?
+                    </p>
+                    <div mat-dialog-actions align="end">
+                        <span>
+                            <button type="button" mat-stroked-button mat-dialog-close>
+                                No
+                            </button>
+                            <button type="submit" mat-stroked-button class="success-btn" [mat-dialog-close]="true"
+                                >
+                                Yes
+                            </button>
+                        </span>
+                    </div>
+                </div>
+                }
+
+            </div>
+
+        </div>
+    </mat-card>
+</div>
